@@ -37,8 +37,8 @@ Sample code here.
     var proxy = pageproxy.createServer({
         keyPath: "./cert/",
         gunzip: false
-    }, function(httpData, next){
-        console.log(httpData.responseTimes);
+    }, function(httpData, next, end){
+        // console.log(httpData.responseTimes);
         next();
     });
 
@@ -76,6 +76,20 @@ pageproxy.createServer(config, [filter])
 -----------------------
 
 Return pageproxy.Server object.
+
+config:
+
+1. keyPath
+
+    Path of cert key, to save new cert file.
+
+    Default value is empty, make new cert file time by time, very slow.
+
+2. gunzip
+
+    Unzip gzip content: true(unzip), false(not unzip)
+
+Filter is same as server.addFilter(filter).
 
 Class: pageproxy.Server
 -----------------------
@@ -189,6 +203,35 @@ Member of httpData object:
 
 1. mark with * will be send after filter
 2. mark with ** have high priority
+
+Mock
+================
+
+You can use pageProxy to mock http.
+
+Sample code:
+
+    var pageproxy = require('pageproxy');
+
+    var proxy = pageproxy.createServer({
+        keyPath: "./cert/",
+        gunzip: false
+    }, function(httpData, next, end){
+        if(httpData.path === '/test.js' && httpData.type === 'request'){
+            console.log(httpData.url);
+            httpData.responseCode = '200';
+            httpData.responseHeaders = {
+                'Content-Type': 'application/javascript'
+            };
+            httpData.responseData = 'alert(1);';
+            return end();
+        }
+        next();
+    });
+
+    proxy.listen(1234, function(msg){
+        console.log('ready',msg);
+    });
 
 License
 ================
