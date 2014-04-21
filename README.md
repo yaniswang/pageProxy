@@ -25,16 +25,16 @@ Install
 
 2. Install paegProxy
 
-    npm install pageproxy
+        npm install pageproxy
 
 Usage
 =======================
 
 Sample code here.
 
-    var pageProxy = require('pageProxy');
+    var pageproxy = require('pageproxy');
 
-    var proxy = pageProxy.createServer({
+    var proxy = pageproxy.createServer({
         keyPath: "./cert/",
         gunzip: false
     }, function(httpData, next){
