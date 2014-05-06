@@ -1,6 +1,6 @@
 {
   "name": "pageproxy",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "Proxy server for webpage debug and analysis.",
   "main": "lib/pageProxy",
   "dependencies": {
