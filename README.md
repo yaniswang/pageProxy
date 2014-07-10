@@ -3,6 +3,8 @@ pageProxy
 
 ![pageProxy logo](https://raw.github.com/yaniswang/pageProxy/master/logo.png)
 
+[![NPM version](https://badge.fury.io/js/pageproxy.png)](http://badge.fury.io/js/pageproxy)
+
 PageProxy is a proxy server for webpage debug and analysis.
 
 Features
