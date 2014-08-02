@@ -38,7 +38,8 @@ Sample code here.
 
     var proxy = pageproxy.createServer({
         keyPath: "./cert/",
-        gunzip: false
+        gunzip: true,
+        delgzip: true
     }, function(httpData, next, end){
         // console.log(httpData.responseTimes);
         next();
@@ -90,6 +91,14 @@ config:
 2. gunzip
 
     Unzip gzip content: true(unzip), false(not unzip)
+
+    default value: true
+
+3. delgzip
+
+    Delete gzip header: true(delete), false(not delete)
+
+    default value: true
 
 Filter is same as server.addFilter(filter).
 
@@ -217,7 +226,8 @@ Sample code:
 
     var proxy = pageproxy.createServer({
         keyPath: "./cert/",
-        gunzip: false
+        gunzip: true,
+        delgzip: true
     }, function(httpData, next, end){
         if(httpData.path === '/test.js' && httpData.type === 'request'){
             console.log(httpData.url);
