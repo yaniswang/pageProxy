@@ -1,15 +1,14 @@
 {
   "name": "pageproxy",
-  "version": "0.9.6",
+  "version": "1.0.0",
   "description": "Proxy server for webpage debug and analysis.",
   "main": "lib/pageProxy",
   "dependencies": {
-    "iconv-lite": "0.4.3",
     "cookie": "0.1.1",
-    "node-forge": "0.6.12"
+    "iconv-lite": "0.4.3",
+    "node-forge": "0.6.39"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git://github.com/yaniswang/pageProxy.git"
@@ -26,6 +25,9 @@
     "javascript",
     "debug"
   ],
+  "engines": {
+    "node": ">=4.x.x"
+  },
   "author": "Yanis Wang",
   "license": "MIT"
 }

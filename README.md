@@ -21,10 +21,6 @@ Install
     
     [http://nodejs.org/](http://nodejs.org/)
 
-3. Install OpenSSL
-
-    [https://www.openssl.org/](https://www.openssl.org/)
-
 2. Install paegProxy
 
         npm install pageproxy
@@ -45,14 +41,14 @@ Sample code here.
         next();
     });
 
-    proxy.on('httpready', function(msg){
+    proxy.on('httpReady', function(msg){
         console.log('httpready',msg);
     });
-    proxy.on('httpsready', function(msg){
+    proxy.on('httpsReady', function(msg){
         console.log('httpsready',msg);
     });
     proxy.on('ready', function(msg){
-        console.log('ready',msg);
+        console.log('ready', msg);
     });
     proxy.on('error', function(msg){
         console.log('error', msg);
@@ -69,7 +65,7 @@ Sample code here.
     }, true);
 
     proxy.listen(1234, function(msg){
-        console.log('ready',msg);
+        console.log('ready', msg);
     });
 
 Api
@@ -107,12 +103,12 @@ Class: pageproxy.Server
 
 Proxy server class.
 
-Event: 'httpready'
+Event: 'httpReady'
 -----------------------
 
 Emitted when httpServer is ready. 
 
-Event: 'httpsready'
+Event: 'httpsReady'
 -----------------------
 
 Emitted when httpsServer is ready. 
@@ -131,11 +127,6 @@ Event: 'request'
 -----------------------
 
 Emitted each time there is a request. 
-
-Event: 'makeCert'
------------------------
-
-Emitted when new https hostname request, after cert been maked. 
 
 Event: 'close'
 -----------------------
@@ -215,7 +206,7 @@ Member of httpData object:
 1. mark with * will be send after filter
 2. mark with ** have high priority
 
-Mock
+Mock http or https request
 ================
 
 You can use pageProxy to mock http.
@@ -242,7 +233,7 @@ Sample code:
     });
 
     proxy.listen(1234, function(msg){
-        console.log('ready',msg);
+        console.log('ready', msg);
     });
 
 License
@@ -252,7 +243,7 @@ pageProxy is released under the MIT license:
 
 > The MIT License
 >
-> Copyright (c) 2014 Yanis Wang \< yanis.wang@gmail.com \>
+> Copyright (c) 2014-2016 Yanis Wang \< yanis.wang@gmail.com \>
 >
 > Permission is hereby granted, free of charge, to any person obtaining a copy
 > of this software and associated documentation files (the "Software"), to deal
