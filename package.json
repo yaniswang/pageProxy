@@ -1,8 +1,8 @@
 {
   "name": "pageproxy",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Proxy server for webpage debug and analysis.",
-  "main": "lib/pageProxy",
+  "main": "lib/pageproxy",
   "dependencies": {
     "cookie": "0.1.1",
     "iconv-lite": "0.4.3",
