@@ -21,7 +21,7 @@ Install
     
     [http://nodejs.org/](http://nodejs.org/)
 
-2. Install paegProxy
+2. Install pageProxy
 
         npm install pageproxy
 
